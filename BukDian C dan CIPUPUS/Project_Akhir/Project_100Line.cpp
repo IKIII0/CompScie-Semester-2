@@ -79,11 +79,25 @@ void tampilkan_semua_data(){
     }
 }
 
+void insertionSort(vector<long> &gaji_pekerja) {
+    for (int i = 1; i < gaji_pekerja.size(); i++) {
+        long long sementara = gaji_pekerja[i];
+        int j = i - 1;
+        while (j >= 0 && gaji_pekerja[j] > sementara) {
+            gaji_pekerja[j + 1] = gaji_pekerja[j];
+            swap(nama_pekerja[j], nama_pekerja[j + 1]);
+            j--;
+        }
+        gaji_pekerja[j + 1] = sementara;
+    }
+}
+
 int main(){
     system("cls");
     int pilihan;
     karyawan pekerja;
     while (true){
+        salah:
         system("pause");
         system("cls");
         cout<<endl;
@@ -127,7 +141,6 @@ int main(){
                 cin.get();
                 cout<<"Masukkan Nama Pekerja yang Ingin Dicari: "; getline(cin, nama_yang_dicari);
                 string nama_pekerja_cari_lower = toLower(nama_yang_dicari);
-                
                 for (int i = 0; i < nama_pekerja.size(); i++) {
                     string nama_pekerja_lower = toLower(nama_pekerja[i]);
                     if (nama_pekerja_lower == nama_pekerja_cari_lower) {
@@ -136,9 +149,10 @@ int main(){
                         break;
                         cout<< "\n\n";
                     }
-                    else{
+                    else {
                         cout << "Pekerja Tidak Ditemukan" << endl;
                     }
+                    
                 }
             }
             else if (pilih == 2){
@@ -175,7 +189,13 @@ int main(){
                 tampilkan_semua_data();
             }
             else if (pilihan == 2){
-                cout << "Coming Soon..." << endl;
+                cout<<"Data Pekerja Sebelum Diurutkan: " << endl;
+                tampilkan_semua_data();
+                insertionSort(gaji_pekerja);
+                cout << "=============================\n";
+                cout << "Data Pekerja Setelah Diurutkan: " << endl;
+                tampilkan_semua_data();
+
             }
             else{
                 cout << "Pilihan Tidak Valid!" << endl;
@@ -184,12 +204,19 @@ int main(){
         }
 
         else if(pilihan == 6){
-            cout << "Terima Kasih :)" << endl;
+            cout << "=============================\n";
+            cout << "   Terima Kasih! Uwaw!       \n";
+            cout << "=============================\n";
+            cout << "       /\\_/\\  \n";
+            cout << "      ( o.o )  \n";
+            cout << "      > ^_^ < \n";
+            cout << "Program berakhir dengan sukses!\n";
             break;
         }
         
         else{
             cout << "Pilihan Tidak Valid!" << endl;
+            goto salah;
         }
     }
 }
