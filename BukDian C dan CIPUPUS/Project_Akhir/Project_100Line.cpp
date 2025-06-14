@@ -133,10 +133,10 @@ int main(){
         else if(pilihan == 4){
             int pilih;
             string nama_yang_dicari;
-            cout<< "Pilih metode pencarian:\n";
-            cout<< "1. Linear Search\n";
-            cout<< "2. Binary Search\n";
-            cout<< "Masukkan Pilihan Anda: "; cin >> pilih;
+            printf("Pilih metode pencarian:\n");
+            printf("1. Linear Search\n");
+            printf("2. Binary Search\n");
+            printf("Masukkan Pilihan Anda: "); cin >> pilih;
             if (pilih == 1){
                 cin.get();
                 cout<<"Masukkan Nama Pekerja yang Ingin Dicari: "; getline(cin, nama_yang_dicari);
@@ -204,18 +204,18 @@ int main(){
         }
 
         else if(pilihan == 6){
-            cout << "=============================\n";
-            cout << "   Terima Kasih! Uwaw!       \n";
-            cout << "=============================\n";
-            cout << "       /\\_/\\  \n";
-            cout << "      ( o.o )  \n";
-            cout << "      > ^_^ < \n";
-            cout << "Program berakhir dengan sukses!\n";
+            printf("=============================\n");
+            printf("   Terima Kasih! Uwaw!       \n");
+            printf("=============================\n");
+            printf("       /\\_/\\  \n");
+            printf("      ( o.o )  \n");
+            printf("      > ^_^ < \n");
+            printf("Program berakhir dengan sukses!\n");
             break;
         }
         
         else{
-            cout << "Pilihan Tidak Valid!" << endl;
+            printf("Pilihan Tidak Valid!\n");
             goto salah;
         }
     }
